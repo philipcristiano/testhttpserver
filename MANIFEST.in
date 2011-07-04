@@ -1,2 +1,2 @@
 include *.py
-include README
+include README.rst

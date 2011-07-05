@@ -6,15 +6,14 @@ use_setuptools()
 import os
 from setuptools import setup, find_packages
 
-
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
     name='testhttpserver',
-    version='0.1.0',
+    version='0.1.1',
     description='A HTTP server to use for testing',
-    keywords = '',
+    keywords = 'testing',
     url='https://github.com/philipcristiano/testhttpserver',
     author='Philip Cristiano',
     author_email='testhttpserver@philipcristiano.com',
@@ -25,11 +24,9 @@ setup(
     long_description=read('README.rst'),
     zip_safe=True,
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
-        'Operating System :: MacOS :: MacOS X',
-        'Operating System :: POSIX',
         'Programming Language :: Python',
     ],
 )

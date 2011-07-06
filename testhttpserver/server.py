@@ -4,13 +4,18 @@ from threading import Thread
 
 class Server(object):
 
-    def __init__(self, port, response_status=200, response_content=''):
+    def __init__(self, port, response_status=200, response_content='', response_headers=None):
         self.post_data = None
+        if response_headers is None:
+            response_headers = []
 
         class Handler(BaseHTTPRequestHandler):
 
             def respond(handler):
                 handler.send_response(response_status)
+                for header, value in response_headers:
+                    print header, value
+                    handler.send_header(header, value)
                 handler.end_headers()
                 handler.rfile.write(response_content)
 

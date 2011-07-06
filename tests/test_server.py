@@ -1,8 +1,13 @@
 import requests
 
 from testhttpserver import Server
+import testhttpserver
 import testhttpserver.server as mod
 
+class DescribePackage(object):
+
+    def should_have_version_number(self):
+        assert testhttpserver.__version__ == '0.1.2'
 
 class BaseHTTPServerTest(object):
 

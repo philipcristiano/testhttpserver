@@ -11,7 +11,7 @@ def read(fname):
 
 setup(
     name='testhttpserver',
-    version='0.1.1',
+    version='0.1.2',
     description='A HTTP server to use for testing',
     keywords = 'testing',
     url='https://github.com/philipcristiano/testhttpserver',

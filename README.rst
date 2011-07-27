@@ -23,10 +23,24 @@ content.
     server = Server(8000, response_status=200, response_content='Content')
 
 After you make your request to http://localhost:8000/ . If you POST to the
-server it will have ``post_headers`` and ``post_content`` available.
+server it will have ``request_headers``, ``request_content``, and
+``request_path``  available.
 
 When you are done remember to ``join()``!
 
     server.join()
 
 See ``tests/test_server.py`` for an example!
+
+
+Server Parameters
+================
+port - The port the server will listen on
+
+response_status - int of the status to return
+
+response_content - string of content to return
+
+response_headers - a list of tuples to return as headers
+
+timeout - number of seconds before the server timesout and returns

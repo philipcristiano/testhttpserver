@@ -13,6 +13,8 @@ class Server(object):
     ):
         """Create a new test server
 
+        :param port: Port to listen on
+
         :param response_status: int of the status to return
 
         :param response_content: string of content to return

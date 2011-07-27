@@ -39,6 +39,7 @@ class Server(object):
                 self.request_headers = handler.headers
                 length = int(handler.headers.get('Content-Length', 0))
                 self.request_content = handler.rfile.read(length)
+                self.request_path = handler.path
 
                 handler.respond()
 

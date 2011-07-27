@@ -33,6 +33,9 @@ class WhenGettingData(BaseHTTPServerTest):
     def should_respond_with_status_200(self):
         assert self.response.status_code == 200
 
+    def should_save_request_path(self):
+        assert self.server.request_path == '/'
+
 
 class WhenPostingData(BaseHTTPServerTest):
 
@@ -44,7 +47,7 @@ class WhenPostingData(BaseHTTPServerTest):
             response_headers=[('Another-Header', 'AWESOME!')]
         )
         cls.response = requests.post(
-            'http://localhost:8020',
+            'http://localhost:8020/path',
             data='POST DATA',
             headers={'Custom-Header': 'Custom-Header-Value'}
         )
@@ -56,13 +59,13 @@ class WhenPostingData(BaseHTTPServerTest):
         assert self.response.status_code == 201
 
     def should_save_headers(self):
-        print self.server.request_headers['Custom-Header']
-        print type(self.server.request_headers)
         assert self.server.request_headers['Custom-Header'] == 'Custom-Header-Value'
+
+    def should_save_request_path(self):
+        assert self.server.request_path == '/path'
 
     def should_respond_with_customer_headers(self):
         assert self.response.headers['Another-Header'] == 'AWESOME!'
-
 
 
 

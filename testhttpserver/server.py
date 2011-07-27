@@ -4,7 +4,24 @@ from threading import Thread
 
 class Server(object):
 
-    def __init__(self, port, response_status=200, response_content='', response_headers=None):
+    def __init__(self,
+        port,
+        response_status=200,
+        response_content='',
+        response_headers=None,
+        timeout=5
+    ):
+        """Create a new test server
+
+        :param response_status: int of the status to return
+
+        :param response_content: string of content to return
+
+        :param response_headers: a list of tuples to return as headers
+
+        :param timeout: number of seconds before the server timesout and returns
+
+        """
         self.post_data = None
         if response_headers is None:
             response_headers = []
@@ -32,7 +49,7 @@ class Server(object):
                 return self.request_handler
 
         self.server = HTTPServer(('localhost', port), Handler)
-        self.server.timeout = 5
+        self.server.timeout = timeout
         self.thread = Thread(target=self.server.handle_request)
         self.thread.daemon = True
         self.thread.start()

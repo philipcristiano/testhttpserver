@@ -31,7 +31,6 @@ class Server(object):
             def respond(handler):
                 handler.send_response(response_status)
                 for header, value in response_headers:
-                    print header, value
                     handler.send_header(header, value)
                 handler.end_headers()
                 handler.rfile.write(response_content)

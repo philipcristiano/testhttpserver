@@ -5,6 +5,8 @@ This is a simple HTTP server that will respond to a single HTTP request and
 record some of the data. It is still an early version and doesn't do
 everything you probably want.
 
+[![Build Status](https://secure.travis-ci.org/philipcristiano/testhttpserver.png?branch=master)](http://travis-ci.org/philipcristiano/testhttpserver)
+
 Installing
 ==========
 

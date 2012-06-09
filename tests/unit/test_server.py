@@ -19,7 +19,7 @@ class BaseHTTPServerTest(object):
     def teardown_class(cls):
         cls.server.join()
 
-class WhenGettingData(BaseHTTPServerTest):
+class DescribeGettingData(BaseHTTPServerTest):
 
     @classmethod
     def setup_class(cls, port=8010, response_status=200):
@@ -37,7 +37,7 @@ class WhenGettingData(BaseHTTPServerTest):
         assert self.server.request_path == '/'
 
 
-class WhenPostingData(BaseHTTPServerTest):
+class DescribePostingData(BaseHTTPServerTest):
 
     @classmethod
     def setup_class(cls, port=8020):

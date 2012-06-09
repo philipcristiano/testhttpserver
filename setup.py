@@ -18,7 +18,7 @@ def run_setup():
         packages=['testhttpserver'],
         install_requires=[],
         test_suite='tests',
-        long_description=read('README.rst'),
+        long_description=read('README.md'),
         zip_safe=True,
         classifiers=[
             'Development Status :: 4 - Beta',

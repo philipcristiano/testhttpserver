@@ -68,5 +68,11 @@ class DescribePostingData(BaseHTTPServerTest):
         assert self.response.headers['Another-Header'] == 'AWESOME!'
 
 
+class DescribeServer(object):
 
-
+    def should_allow_recreating_server_on_same_port(self):
+        for i in range(2):
+            server = Server(port=8000, response_status=200,
+                            response_content='')
+            requests.post('http://localhost:8000/')
+            server.join()

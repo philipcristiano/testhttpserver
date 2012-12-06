@@ -8,7 +8,7 @@ def read(fname):
 def run_setup():
     setup(
         name='testhttpserver',
-        version='0.1.3',
+        version='0.1.4',
         description='A HTTP server to use for testing',
         keywords = 'testing',
         url='https://github.com/philipcristiano/testhttpserver',

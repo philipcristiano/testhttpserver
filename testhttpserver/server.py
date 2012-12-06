@@ -58,5 +58,4 @@ class Server(object):
 
     def join(self):
         self.thread.join()
-
-
+        self.server.server_close()
